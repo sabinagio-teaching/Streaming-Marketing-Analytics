@@ -37,18 +37,189 @@ DEFAULT_DATASET_CANDIDATES = [
 ]
 
 TOPIC_KEYWORDS = {
-    "LGBTQ+": ["gay", "lesbian", "lgbt", "trans", "queer", "bisexual", "drag"],
-    "Politics": ["politics", "president", "government", "election", "policy", "minister", "senate", "congress"],
-    "Climate": ["climate", "environment", "global warming", "pollution", "sustainability", "ecology"],
-    "War": ["war", "battle", "army", "soldier", "military", "conflict", "invasion"],
-    "Family": ["family", "mother", "father", "children", "home", "parent", "siblings"],
-    "Crime": ["crime", "murder", "police", "detective", "investigation", "gang", "mafia", "robbery"],
-    "Romance": ["love", "romance", "relationship", "couple", "marriage", "affair"],
-    "Technology": ["technology", "ai", "robot", "future", "cyber", "machine", "algorithm"],
-    "Mental Health": ["depression", "anxiety", "trauma", "therapy", "mental", "psychological"],
-    "Coming of Age": ["teen", "adolescent", "growing up", "school", "youth", "friendship"],
-    "Social Issues": ["racism", "inequality", "poverty", "discrimination", "justice", "migration"],
-    "Fantasy / Supernatural": ["magic", "witch", "dragon", "supernatural", "monster", "curse", "fantasy"],
+    "lgbtq": [
+        "gay", "lesbian", "lgbt", "trans", "queer", "bisexual",
+        "nonbinary", "coming out", "drag", "identity"
+    ],
+
+    "politics": [
+        "politics", "president", "government", "election", "policy",
+        "senate", "congress", "campaign", "minister", "dictator",
+        "democracy", "corruption", "power", "state"
+    ],
+
+    "climate_environment": [
+        "climate", "environment", "global warming", "pollution",
+        "ecology", "sustainability", "nature", "forest", "wildlife",
+        "environmental disaster", "carbon", "climate crisis"
+    ],
+
+    "war_military": [
+        "war", "battle", "army", "soldier", "military", "conflict",
+        "weapon", "navy", "air force", "commander", "resistance",
+        "invasion", "combat", "veteran"
+    ],
+
+    "family": [
+        "family", "mother", "father", "parent", "children", "child",
+        "home", "siblings", "brother", "sister", "marriage",
+        "divorce", "parenthood", "relatives"
+    ],
+
+    "crime": [
+        "crime", "murder", "police", "detective", "investigation",
+        "killer", "gang", "mafia", "cartel", "robbery", "heist",
+        "forensics", "prison", "criminal", "underworld"
+    ],
+
+    "policial": [
+        "police", "cop", "officer", "detective", "agent", "rookie",
+        "investigation", "investigator", "inspector", "sergeant",
+        "lieutenant", "captain", "chief", "precinct", "partner",
+        "case", "crime scene", "forensics", "suspect", "witness",
+        "interrogation", "undercover", "surveillance", "homicide",
+        "manhunt", "law enforcement", "special unit", "task force",
+        "fbi", "cia", "narcotics", "patrol", "unit"
+    ],
+
+    "romance": [
+        "love", "romance", "relationship", "couple", "passion",
+        "heartbreak", "dating", "affair", "wedding", "breakup",
+        "soulmate", "jealousy"
+    ],
+
+    "technology": [
+        "technology", "ai", "artificial intelligence", "robot",
+        "future", "cyber", "computer", "hacker", "internet",
+        "virtual reality", "machine", "automation", "surveillance"
+    ],
+
+    "mental_health": [
+        "depression", "anxiety", "trauma", "therapy", "mental",
+        "psychological", "stress", "grief", "addiction", "bipolar",
+        "schizophrenia", "panic", "healing", "psychiatric"
+    ],
+
+    "coming_of_age": [
+        "teen", "adolescent", "growing up", "school", "youth",
+        "friendship", "identity", "first love", "high school",
+        "college", "self-discovery", "maturity"
+    ],
+
+    "social_issues": [
+        "racism", "inequality", "poverty", "discrimination", "justice",
+        "migration", "sexism", "class", "homophobia", "xenophobia",
+        "oppression", "human rights", "activism"
+    ],
+
+    "fantasy_supernatural": [
+        "magic", "witch", "dragon", "supernatural", "monster",
+        "curse", "fantasy", "sorcery", "wizard", "demon", "ghost",
+        "prophecy", "kingdom", "spell"
+    ],
+
+    "science_fiction": [
+        "space", "alien", "spaceship", "future", "planet",
+        "time travel", "parallel universe", "android", "mutation",
+        "dystopia", "utopia", "interstellar", "extraterrestrial"
+    ],
+
+    "horror": [
+        "horror", "fear", "haunted", "ghost", "possession",
+        "slasher", "evil", "demon", "nightmare", "blood",
+        "terror", "zombie", "paranormal"
+    ],
+
+    "thriller": [
+        "thriller", "suspense", "mystery", "conspiracy", "chase",
+        "secret", "obsession", "danger", "kidnapping", "betrayal",
+        "tension", "survival"
+    ],
+
+    "action_adventure": [
+        "action", "adventure", "hero", "mission", "explosion",
+        "fight", "chase", "survival", "escape", "journey",
+        "quest", "mercenary"
+    ],
+
+    "historical": [
+        "history", "historical", "period drama", "king", "queen",
+        "empire", "revolution", "civilization", "medieval",
+        "ancient", "biographical", "royalty"
+    ],
+
+    "biography": [
+        "biography", "biopic", "true story", "real life", "famous",
+        "artist", "scientist", "politician", "athlete", "inventor"
+    ],
+
+    "sports": [
+        "sport", "football", "soccer", "basketball", "baseball",
+        "tennis", "boxing", "fighter", "competition", "tournament",
+        "coach", "team", "championship"
+    ],
+
+    "music_performance": [
+        "music", "band", "singer", "concert", "performance",
+        "musician", "song", "dance", "ballet", "opera",
+        "stage", "show business"
+    ],
+
+    "comedy": [
+        "comedy", "funny", "humor", "satire", "parody",
+        "awkward", "absurd", "joke", "laugh", "misunderstanding"
+    ],
+
+    "drama": [
+        "drama", "emotional", "conflict", "sacrifice", "loss",
+        "betrayal", "redemption", "personal struggle", "intense"
+    ],
+
+    "mystery": [
+        "mystery", "secret", "clue", "disappearance", "puzzle",
+        "unknown", "hidden truth", "unsolved", "investigation"
+    ],
+
+    "survival_disaster": [
+        "survival", "disaster", "earthquake", "tsunami", "fire",
+        "shipwreck", "plane crash", "apocalypse", "epidemic",
+        "outbreak", "catastrophe"
+    ],
+
+    "religion_spirituality": [
+        "religion", "faith", "god", "church", "priest", "spiritual",
+        "belief", "miracle", "sacred", "ritual", "afterlife"
+    ],
+
+    "animation_family": [
+        "animation", "animated", "family-friendly", "kids",
+        "talking animals", "fairy tale", "adventure for children"
+    ],
+
+    "friendship": [
+        "friendship", "best friends", "companionship", "bond",
+        "loyalty", "group of friends", "reunion"
+    ],
+
+    "revenge": [
+        "revenge", "vengeance", "payback", "betrayal", "justice",
+        "retaliation", "avenger"
+    ],
+
+    "road_trip_journey": [
+        "road trip", "journey", "travel", "on the road", "escape",
+        "self-discovery", "destination"
+    ],
+
+    "school_university": [
+        "school", "teacher", "student", "classroom", "university",
+        "college", "campus", "exam", "bullying", "graduation"
+    ],
+
+    "work_business": [
+        "work", "office", "career", "boss", "company", "business",
+        "corporate", "startup", "ambition", "promotion", "colleague"
+    ]
 }
 
 
